@@ -6,7 +6,7 @@ import ru.konoplev.model.Film;
 
 import java.util.List;
 
-
+@Service
 public class FilmServiceImpl implements FilmService {
     private final FilmDAO filmDAO;
 
@@ -15,7 +15,7 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
-    public List<Film> allFilms() {
+    public List<Film> getAll() {
         return filmDAO.allFilm();
     }
 

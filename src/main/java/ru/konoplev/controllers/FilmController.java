@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 import ru.konoplev.model.Film;
-import ru.konoplev.repository.FilmService;
+import ru.konoplev.service.FilmService;
 
 import java.util.List;
 
@@ -47,19 +47,19 @@ public class FilmController {
 
     @PostMapping("/add")
     public RedirectView addFilm(@ModelAttribute Film film) {
-        filmService.create(film);
+        filmService.addFilm(film);
         return new RedirectView("/", true);
     }
 
     @GetMapping("/film/delete/{id}")
     public RedirectView deleteFilm(@PathVariable("id") long id) {
-        filmService.delete(id);
+        filmService.deleteFilm(id);
         return new RedirectView("/", true);
     }
 
     @PostMapping("/film/edit")
     public RedirectView editFilm(@ModelAttribute("film") Film film) {
-        filmService.edit(film);
+        filmService.editFilm(film);
         return new RedirectView("/", true);
     }
 

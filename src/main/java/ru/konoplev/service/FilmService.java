@@ -5,7 +5,7 @@ import ru.konoplev.model.Film;
 import java.util.List;
 
 public interface FilmService {
-    List<Film>allFilms();
+    List<Film> getAll();
     void addFilm(Film film);
     void editFilm(Film film);
     void deleteFilm(Long id);
