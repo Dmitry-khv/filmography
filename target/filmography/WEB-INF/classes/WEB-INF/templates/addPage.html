@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<title>Add</title>
+<body>
+Add page
+<br>
+
+<form id="add film" th:action="@{/add}" th:object="${film}" th:method="post" accept-charset="UTF-8">
+    <input type="hidden" name="id" th:value="${film.id}">
+    <label for="title">Title</label>
+    <input id="title" type="text" name="title" th:value="${film.title}">
+    <label for="year">Year</label>
+    <input id="year" type="text" name="year" th:value="${film.year}">
+    <label for="genre">Genre</label>
+    <input id="genre" type="text" name="genre" th:value="${film.genre}">
+    <label for="watched">Watched</label>
+    <input id="watched" type="text" name="watched" th:value="${film.watched}">
+    <input type="submit" value="Add film">
+</form>
+
+</body>
+</html>
