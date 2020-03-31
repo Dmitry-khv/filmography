@@ -24,7 +24,7 @@ public class FilmController {
 
     @GetMapping("/")
     public String allFilmsView(Model model){
-        List<Film> films = filmService.getAll();
+        List<Film> films = filmService.allFilms();
         model.addAttribute("films", films);
         return "films.html";
     }
@@ -53,7 +53,8 @@ public class FilmController {
 
     @GetMapping("/film/delete/{id}")
     public RedirectView deleteFilm(@PathVariable("id") long id) {
-        filmService.deleteFilm(id);
+        Film film = filmService.getById(id);
+        filmService.deleteFilm(film);
         return new RedirectView("/", true);
     }
 

@@ -10,7 +10,7 @@ public class DataBaseSessionHibernate implements DataBaseSession {
 
     public DataBaseSessionHibernate(Session session) {
         this.session = session;
-        transaction = session.getTransaction();
+        transaction = session.beginTransaction();
     }
 
     public Session getSession() {

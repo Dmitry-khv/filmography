@@ -38,7 +38,11 @@ class HibernateUtilsTest {
         session.doWork(connection -> assertFalse(connection.isClosed()));
     }
     @Test
-    void correctCommitSession() {
+    void transactionIsActive() {
+        session = sessionFactory.getCurrentSession();
+        DataBaseSessionHibernate dataBaseSessionHibernate = new DataBaseSessionHibernate(session);
+        assertNotNull(dataBaseSessionHibernate.getTransaction());
+//        session.beginTransaction();
     }
 
 
