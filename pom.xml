@@ -16,7 +16,7 @@
         <maven.compiler.target>13</maven.compiler.target>
         <spring.version>5.2.5.RELEASE</spring.version>
         <hibernate-core.version>5.4.13.Final</hibernate-core.version>
-        <mySql.version>8.0.19</mySql.version>
+        <mySql.version>8.0.28</mySql.version>
         <thymleaf.version>3.0.11.RELEASE</thymleaf.version>
         <junit.version>5.6.1</junit.version>
     </properties>
